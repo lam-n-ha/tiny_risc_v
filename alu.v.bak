@@ -1,0 +1,126 @@
+module alu(
+input [31:0]s1,
+input [31:0]s2,
+input [7:0]alu_control,
+output reg[31:0]result);
+
+reg [31:0]      SRL_1;
+reg [31:0]      SRL_2;
+reg [31:0]      SRL_4;
+reg [31:0]      SRL_8;
+
+reg [31:0]      SLL_1;
+reg [31:0]      SLL_2;
+reg [31:0]      SLL_4;
+reg [31:0]      SLL_8;
+
+
+parameter ADD = 8'd0;
+parameter SUB = 8'd1;
+parameter AND = 8'd2;
+parameter OR = 8'd3;
+parameter XOR = 8'd4;
+parameter SLT = 8'd5;
+parameter SLTU = 8'd6;
+parameter SRA = 8'd7;
+parameter SRL = 8'd8;
+parameter SLL = 8'd9;
+parameter MUL = 8'd10;
+parameter SRA = 8'd11;
+parameter LUI = 8'd12;
+
+always @(*)
+begin
+		SRL_1 = 32'd0;
+		SRL_2 = 32'd0;
+		SRL_4 = 32'd0;
+		SRL_8 = 32'd0;
+		
+		SLL_1 = 32'd0;
+		SLL_2 = 32'd0;
+		SLL_4 = 32'd0;
+		SLL_8 = 32'd0;
+	case (alu_control)
+		ADD: //ADD or ADDI
+		begin
+			result = s1+s2;
+		end
+		SUB: //SUB
+		begin
+			result = s1-s2;
+		end
+		AND: //AND or ANDI
+		begin
+			result = s1&s2;
+		end	
+		OR: //OR or ORI
+		begin
+			result = s1|s2
+		end
+		XOR: //XOR or XORI
+		begin
+			result = s1^s2
+		end
+		SLT: //SLT or SLTI
+		begin
+			result = ($signed(s1) < $signed(s2));
+		end
+		SLTU: //SLTU or SLTIU
+		begin
+			result = (s1<s2);
+		end
+		SRA: //SRA or SRAI
+		begin
+			result = s1 >>> s2;
+		end
+		SRL: //SRL or SRLI
+		begin
+			result = s1 >> s2;
+		end
+		SLL: //SLL or SLLI
+		begin
+			if (s2[0])
+             SLL_1 = {s1[30:0],1'b0};
+			else
+				 SLL_1 = s1;
+			if (s2[1])
+				 SLL_2 = {SLL_1[29:0],2'b00};
+			else
+				 SLL_2 = SLL_1;
+
+			if (s2[2])
+				 SLL_4 = {SLL_2[27:0],4'b0000};
+			else
+				 SLL_4 = SLL_2;
+
+			if (s2[3])
+				 SLL_8 = {SLL_4[23:0],8'b00000000};
+			else
+				 SLL_8 = SLL_4;
+
+			if (s2[4])
+				 result = {SLL_8[15:0],16'b0000000000000000};
+			else
+				 result = SLL_8;
+		end
+		MUL: //MUL
+		begin
+			result = s1 * s2;
+		end
+		SRA: //SRA
+		begin
+			result = s1 >>> s2;
+		end
+		LUI: //LUI
+		begin
+			result[31:12] = s2[19:0];
+			result[11:0] = 12'd0;
+		end
+		AUIPC: //AUIPC
+		begin
+			result = s1 >>> s2;
+		end
+	endcase
+end
+	
+endmodule

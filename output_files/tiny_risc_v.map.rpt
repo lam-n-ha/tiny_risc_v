@@ -1,0 +1,809 @@
+Analysis & Synthesis report for tiny_risc_v
+Mon Apr 12 23:59:08 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |tiny_risc_v
+ 14. Parameter Settings for User Entity Instance: alu:my_alu
+ 15. Port Connectivity Checks: "alu:my_alu"
+ 16. Port Connectivity Checks: "instruction_parser:iparse"
+ 17. Port Connectivity Checks: "instructions:instruction_from_memory"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 12 23:59:08 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; tiny_risc_v                                 ;
+; Top-level Entity Name              ; tiny_risc_v                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 20                                          ;
+;     Total combinational functions  ; 20                                          ;
+;     Dedicated logic registers      ; 13                                          ;
+; Total registers                    ; 13                                          ;
+; Total pins                         ; 121                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; tiny_risc_v        ; tiny_risc_v        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+---------+
+; instructions_bb.v                ; yes             ; User Wizard-Generated File  ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v    ;         ;
+; instruction_parser.v             ; yes             ; User Verilog HDL File       ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v ;         ;
+; tiny_risc_v.v                    ; yes             ; User Verilog HDL File       ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v        ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File       ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v                ;         ;
+; register_file.v                  ; yes             ; User Verilog HDL File       ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v      ;         ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 20        ;
+;                                             ;           ;
+; Total combinational functions               ; 20        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 7         ;
+;     -- 3 input functions                    ; 5         ;
+;     -- <=2 input functions                  ; 8         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 13        ;
+;     -- arithmetic mode                      ; 7         ;
+;                                             ;           ;
+; Total registers                             ; 13        ;
+;     -- Dedicated logic registers            ; 13        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 121       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; S[1]~reg0 ;
+; Maximum fan-out                             ; 16        ;
+; Total fan-out                               ; 241       ;
+; Average fan-out                             ; 0.88      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |tiny_risc_v               ; 20 (20)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 121  ; 0            ; |tiny_risc_v        ; tiny_risc_v ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; NS[0]$latch                                        ; S[2]~reg0           ; yes                    ;
+; NS[1]$latch                                        ; S[2]~reg0           ; yes                    ;
+; NS[2]$latch                                        ; S[2]~reg0           ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++-----------------------------------------------+---------------------------------------------+
+; Register name                                 ; Reason for Removal                          ;
++-----------------------------------------------+---------------------------------------------+
+; we                                            ; Stuck at GND due to stuck port data_in      ;
+; rr1[4]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr1[3]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr1[2]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr1[1]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr1[0]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr2[4]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr2[3]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr2[2]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr2[1]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; rr2[0]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wr[4]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wr[3]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wr[2]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wr[1]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wr[0]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[31]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[30]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[29]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[28]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[27]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[26]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[25]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[24]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[23]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[22]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[21]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[20]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[19]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[18]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[17]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[16]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[15]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[14]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[13]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[12]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[11]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[10]~reg0                                   ; Stuck at GND due to stuck port data_in      ;
+; wd[9]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[8]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[7]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[6]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[5]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[4]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[3]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[2]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[1]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; wd[0]~reg0                                    ; Stuck at GND due to stuck port data_in      ;
+; register_file:register|reg_storage[967..1023] ; Lost fanout                                 ;
+; register_file:register|reg_storage[0]         ; Stuck at GND due to stuck port data_in      ;
+; register_file:register|reg_storage[966]       ; Stuck at GND due to stuck port clock_enable ;
+; register_file:register|reg_storage[32..959]   ; Lost fanout                                 ;
+; register_file:register|reg_storage[1..31]     ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 1066      ;                                             ;
++-----------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++---------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++---------------+---------------------------+-------------------------------------------------------------------------------------+
+; rr1[4]~reg0   ; Stuck at GND              ; register_file:register|reg_storage[1023], register_file:register|reg_storage[1022], ;
+;               ; due to stuck port data_in ; register_file:register|reg_storage[1021], register_file:register|reg_storage[1020], ;
+;               ;                           ; register_file:register|reg_storage[1019], register_file:register|reg_storage[1018], ;
+;               ;                           ; register_file:register|reg_storage[1017], register_file:register|reg_storage[1016], ;
+;               ;                           ; register_file:register|reg_storage[1015], register_file:register|reg_storage[1014], ;
+;               ;                           ; register_file:register|reg_storage[1013], register_file:register|reg_storage[1012], ;
+;               ;                           ; register_file:register|reg_storage[1011], register_file:register|reg_storage[1010], ;
+;               ;                           ; register_file:register|reg_storage[1009], register_file:register|reg_storage[1008], ;
+;               ;                           ; register_file:register|reg_storage[1007], register_file:register|reg_storage[1006], ;
+;               ;                           ; register_file:register|reg_storage[1005], register_file:register|reg_storage[1004], ;
+;               ;                           ; register_file:register|reg_storage[1003], register_file:register|reg_storage[1002], ;
+;               ;                           ; register_file:register|reg_storage[1001], register_file:register|reg_storage[1000], ;
+;               ;                           ; register_file:register|reg_storage[999], register_file:register|reg_storage[998],   ;
+;               ;                           ; register_file:register|reg_storage[997], register_file:register|reg_storage[996],   ;
+;               ;                           ; register_file:register|reg_storage[995], register_file:register|reg_storage[994],   ;
+;               ;                           ; register_file:register|reg_storage[993], register_file:register|reg_storage[992],   ;
+;               ;                           ; register_file:register|reg_storage[991], register_file:register|reg_storage[990],   ;
+;               ;                           ; register_file:register|reg_storage[989], register_file:register|reg_storage[988],   ;
+;               ;                           ; register_file:register|reg_storage[987], register_file:register|reg_storage[986],   ;
+;               ;                           ; register_file:register|reg_storage[985], register_file:register|reg_storage[984],   ;
+;               ;                           ; register_file:register|reg_storage[983], register_file:register|reg_storage[982],   ;
+;               ;                           ; register_file:register|reg_storage[981], register_file:register|reg_storage[980],   ;
+;               ;                           ; register_file:register|reg_storage[979], register_file:register|reg_storage[978],   ;
+;               ;                           ; register_file:register|reg_storage[977], register_file:register|reg_storage[976],   ;
+;               ;                           ; register_file:register|reg_storage[975], register_file:register|reg_storage[974],   ;
+;               ;                           ; register_file:register|reg_storage[973], register_file:register|reg_storage[972],   ;
+;               ;                           ; register_file:register|reg_storage[971], register_file:register|reg_storage[970],   ;
+;               ;                           ; register_file:register|reg_storage[969], register_file:register|reg_storage[968],   ;
+;               ;                           ; register_file:register|reg_storage[967], register_file:register|reg_storage[959],   ;
+;               ;                           ; register_file:register|reg_storage[958], register_file:register|reg_storage[957],   ;
+;               ;                           ; register_file:register|reg_storage[956], register_file:register|reg_storage[955],   ;
+;               ;                           ; register_file:register|reg_storage[954], register_file:register|reg_storage[953],   ;
+;               ;                           ; register_file:register|reg_storage[952], register_file:register|reg_storage[951],   ;
+;               ;                           ; register_file:register|reg_storage[950], register_file:register|reg_storage[949],   ;
+;               ;                           ; register_file:register|reg_storage[948], register_file:register|reg_storage[947],   ;
+;               ;                           ; register_file:register|reg_storage[946], register_file:register|reg_storage[945],   ;
+;               ;                           ; register_file:register|reg_storage[944], register_file:register|reg_storage[943],   ;
+;               ;                           ; register_file:register|reg_storage[942], register_file:register|reg_storage[941],   ;
+;               ;                           ; register_file:register|reg_storage[940], register_file:register|reg_storage[939],   ;
+;               ;                           ; register_file:register|reg_storage[938], register_file:register|reg_storage[937],   ;
+;               ;                           ; register_file:register|reg_storage[936], register_file:register|reg_storage[935],   ;
+;               ;                           ; register_file:register|reg_storage[934], register_file:register|reg_storage[933],   ;
+;               ;                           ; register_file:register|reg_storage[932], register_file:register|reg_storage[931],   ;
+;               ;                           ; register_file:register|reg_storage[930], register_file:register|reg_storage[929],   ;
+;               ;                           ; register_file:register|reg_storage[928], register_file:register|reg_storage[927],   ;
+;               ;                           ; register_file:register|reg_storage[926], register_file:register|reg_storage[925],   ;
+;               ;                           ; register_file:register|reg_storage[924], register_file:register|reg_storage[923],   ;
+;               ;                           ; register_file:register|reg_storage[922], register_file:register|reg_storage[921],   ;
+;               ;                           ; register_file:register|reg_storage[920], register_file:register|reg_storage[919],   ;
+;               ;                           ; register_file:register|reg_storage[918], register_file:register|reg_storage[917],   ;
+;               ;                           ; register_file:register|reg_storage[916], register_file:register|reg_storage[915],   ;
+;               ;                           ; register_file:register|reg_storage[914], register_file:register|reg_storage[913],   ;
+;               ;                           ; register_file:register|reg_storage[912], register_file:register|reg_storage[911],   ;
+;               ;                           ; register_file:register|reg_storage[910], register_file:register|reg_storage[909],   ;
+;               ;                           ; register_file:register|reg_storage[908], register_file:register|reg_storage[907],   ;
+;               ;                           ; register_file:register|reg_storage[906], register_file:register|reg_storage[905],   ;
+;               ;                           ; register_file:register|reg_storage[904], register_file:register|reg_storage[903],   ;
+;               ;                           ; register_file:register|reg_storage[902], register_file:register|reg_storage[901],   ;
+;               ;                           ; register_file:register|reg_storage[900], register_file:register|reg_storage[899],   ;
+;               ;                           ; register_file:register|reg_storage[898], register_file:register|reg_storage[897],   ;
+;               ;                           ; register_file:register|reg_storage[896]                                             ;
+; we            ; Stuck at GND              ; register_file:register|reg_storage[0], register_file:register|reg_storage[966],     ;
+;               ; due to stuck port data_in ; register_file:register|reg_storage[31], register_file:register|reg_storage[30],     ;
+;               ;                           ; register_file:register|reg_storage[29], register_file:register|reg_storage[28],     ;
+;               ;                           ; register_file:register|reg_storage[27], register_file:register|reg_storage[26],     ;
+;               ;                           ; register_file:register|reg_storage[25], register_file:register|reg_storage[24],     ;
+;               ;                           ; register_file:register|reg_storage[23], register_file:register|reg_storage[22],     ;
+;               ;                           ; register_file:register|reg_storage[21], register_file:register|reg_storage[20],     ;
+;               ;                           ; register_file:register|reg_storage[19], register_file:register|reg_storage[18],     ;
+;               ;                           ; register_file:register|reg_storage[17], register_file:register|reg_storage[16],     ;
+;               ;                           ; register_file:register|reg_storage[15], register_file:register|reg_storage[14],     ;
+;               ;                           ; register_file:register|reg_storage[13], register_file:register|reg_storage[12],     ;
+;               ;                           ; register_file:register|reg_storage[11], register_file:register|reg_storage[10],     ;
+;               ;                           ; register_file:register|reg_storage[9], register_file:register|reg_storage[8],       ;
+;               ;                           ; register_file:register|reg_storage[7], register_file:register|reg_storage[6],       ;
+;               ;                           ; register_file:register|reg_storage[5], register_file:register|reg_storage[4],       ;
+;               ;                           ; register_file:register|reg_storage[3], register_file:register|reg_storage[2],       ;
+;               ;                           ; register_file:register|reg_storage[1]                                               ;
++---------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 13    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |tiny_risc_v|PC[0]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |tiny_risc_v ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; START          ; 000   ; Unsigned Binary                                    ;
+; FETCH          ; 001   ; Unsigned Binary                                    ;
+; EXECUTE        ; 010   ; Unsigned Binary                                    ;
+; WRITEBACK      ; 011   ; Unsigned Binary                                    ;
+; DONE           ; 100   ; Unsigned Binary                                    ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:my_alu ;
++----------------+----------+-----------------------------+
+; Parameter Name ; Value    ; Type                        ;
++----------------+----------+-----------------------------+
+; ADD            ; 00000000 ; Unsigned Binary             ;
+; SUB            ; 00000001 ; Unsigned Binary             ;
+; AND            ; 00000010 ; Unsigned Binary             ;
+; OR             ; 00000011 ; Unsigned Binary             ;
+; XOR            ; 00000100 ; Unsigned Binary             ;
+; SLT            ; 00000101 ; Unsigned Binary             ;
+; SLTU           ; 00000110 ; Unsigned Binary             ;
+; SRA            ; 00000111 ; Unsigned Binary             ;
+; SRL            ; 00001000 ; Unsigned Binary             ;
+; SLL            ; 00001001 ; Unsigned Binary             ;
+; MUL            ; 00001010 ; Unsigned Binary             ;
+; LUI            ; 00001011 ; Unsigned Binary             ;
+; AUIPC          ; 00001100 ; Unsigned Binary             ;
++----------------+----------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:my_alu"                                                                           ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; result ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "instruction_parser:iparse"                                                                                                   ;
++---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                   ;
++---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; opcode  ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (1 bits) it drives; bit(s) "opcode[6..1]" have no fanouts ;
+; opcode  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; s1      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; s2      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; de      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; i5      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; funct7  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; i7      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; funct3  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; i12     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; address ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
++---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "instructions:instruction_from_memory"                                                                                                         ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "data[31..1]" will be connected to GND. ;
+; data ; Input ; Info     ; Stuck at GND                                                                                                                                   ;
+; wren ; Input ; Info     ; Stuck at GND                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 121                         ;
+; cycloneiii_ff         ; 13                          ;
+;     CLR               ; 5                           ;
+;     ENA CLR SCLR      ; 8                           ;
+; cycloneiii_lcell_comb ; 21                          ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 7                           ;
+;     normal            ; 14                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 7                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.95                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Mon Apr 12 23:59:01 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tiny_risc_v -c tiny_risc_v
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file instructions_bb.v
+    Info (12023): Found entity 1: instructions File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_parser.v
+    Info (12023): Found entity 1: instruction_parser File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file tiny_risc_v.v
+    Info (12023): Found entity 1: tiny_risc_v File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 1
+Warning (12019): Can't analyze file -- file instructions.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: register_file File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb.v
+    Info (12023): Found entity 1: tb File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
+    Info (12023): Found entity 1: testbench File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/testbench.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at tiny_risc_v.v(56): created implicit net for "opcode" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 56
+Info (12127): Elaborating entity "tiny_risc_v" for the top level hierarchy
+Warning (10270): Verilog HDL Case Statement warning at tiny_risc_v.v(83): incomplete case statement has no default case item File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 83
+Warning (10240): Verilog HDL Always Construct warning at tiny_risc_v.v(83): inferring latch(es) for variable "NS", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 83
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(147): truncated value with size 32 to match size of target (1) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 147
+Warning (10199): Verilog HDL Case Statement warning at tiny_risc_v.v(151): case item expression never matches the case expression File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 151
+Warning (10199): Verilog HDL Case Statement warning at tiny_risc_v.v(201): case item expression never matches the case expression File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 201
+Info (10041): Inferred latch for "NS[0]" at tiny_risc_v.v(83) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 83
+Info (10041): Inferred latch for "NS[1]" at tiny_risc_v.v(83) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 83
+Info (10041): Inferred latch for "NS[2]" at tiny_risc_v.v(83) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 83
+Info (12128): Elaborating entity "instructions" for hierarchy "instructions:instruction_from_memory" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 54
+Warning (10034): Output port "q" at instructions_bb.v(46) has no driver File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v Line: 46
+Info (12128): Elaborating entity "instruction_parser" for hierarchy "instruction_parser:iparse" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 56
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "funct7", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "s2", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "s1", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "de", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "i7", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "i5", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "i12", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(19): inferring latch(es) for variable "address", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "de[0]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "de[1]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "de[2]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "de[3]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "de[4]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[0]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[1]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[2]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[3]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[4]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[5]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[6]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[7]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[8]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[9]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[10]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[11]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[12]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[13]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[14]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[15]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[16]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[17]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[18]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "address[19]" at instruction_parser.v(46) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 46
+Info (10041): Inferred latch for "i5[0]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i5[1]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i5[2]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i5[3]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i5[4]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s1[0]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s1[1]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s1[2]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s1[3]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s1[4]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s2[0]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s2[1]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s2[2]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s2[3]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "s2[4]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[0]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[1]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[2]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[3]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[4]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[5]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i7[6]" at instruction_parser.v(39) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 39
+Info (10041): Inferred latch for "i12[0]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[1]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[2]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[3]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[4]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[5]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[6]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[7]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[8]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[9]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[10]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "i12[11]" at instruction_parser.v(33) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 33
+Info (10041): Inferred latch for "funct7[0]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[1]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[2]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[3]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[4]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[5]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (10041): Inferred latch for "funct7[6]" at instruction_parser.v(19) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 19
+Info (12128): Elaborating entity "alu" for hierarchy "alu:my_alu" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 62
+Warning (10270): Verilog HDL Case Statement warning at alu.v(47): incomplete case statement has no default case item File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at alu.v(36): inferring latch(es) for variable "AUIPCim", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Warning (10240): Verilog HDL Always Construct warning at alu.v(36): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[0]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[1]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[2]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[3]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[4]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[5]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[6]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[7]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[8]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[9]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[10]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[11]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[12]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[13]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[14]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[15]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[16]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[17]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[18]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[19]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[20]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[21]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[22]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[23]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[24]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[25]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[26]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[27]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[28]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[29]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[30]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (10041): Inferred latch for "result[31]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 69
+Warning (10230): Verilog HDL assignment warning at register_file.v(41): truncated value with size 39 to match size of target (32) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 41
+Warning (10230): Verilog HDL assignment warning at register_file.v(76): truncated value with size 39 to match size of target (32) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 76
+Warning (10230): Verilog HDL assignment warning at register_file.v(119): truncated value with size 32 to match size of target (26) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 119
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rr1[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr1[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr1[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr1[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr1[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr2[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr2[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr2[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr2[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rr2[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wr[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wr[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wr[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wr[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wr[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "rd1[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[5]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[6]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[7]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[8]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[9]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[10]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[11]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[12]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[13]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[14]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[15]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[16]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[17]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[18]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[19]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[20]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[21]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[22]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[23]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[24]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[25]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[26]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[27]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[28]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[29]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[30]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd1[31]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[5]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[6]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[7]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[8]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[9]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[10]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[11]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[12]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[13]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[14]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[15]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[16]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[17]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[18]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[19]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[20]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[21]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[22]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[23]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[24]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[25]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[26]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[27]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[28]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[29]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[30]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "rd2[31]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 9
+    Warning (13410): Pin "wd[0]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[1]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[2]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[4]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[5]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[6]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[7]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[8]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[9]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[10]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[11]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[12]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[13]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[14]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[15]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[16]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[17]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[18]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[19]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[20]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[21]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[22]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[23]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[24]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[25]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[26]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[27]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[28]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[29]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[30]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+    Warning (13410): Pin "wd[31]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 129
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 985 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/output_files/tiny_risc_v.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 118 output pins
+    Info (21061): Implemented 23 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 136 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Mon Apr 12 23:59:08 2021
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/output_files/tiny_risc_v.map.smsg.
+
+
