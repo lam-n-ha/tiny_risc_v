@@ -1,16 +1,16 @@
-Fitter Status : Successful - Mon Apr 12 23:59:29 2021
+Fitter Status : Successful - Thu Apr 29 00:32:45 2021
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : tiny_risc_v
 Top-level Entity Name : tiny_risc_v
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 24 / 114,480 ( < 1 % )
-    Total combinational functions : 20 / 114,480 ( < 1 % )
-    Dedicated logic registers : 13 / 114,480 ( < 1 % )
-Total registers : 13
-Total pins : 121 / 529 ( 23 % )
+Total logic elements : 2,717 / 114,480 ( 2 % )
+    Total combinational functions : 2,459 / 114,480 ( 2 % )
+    Dedicated logic registers : 1,184 / 114,480 ( 1 % )
+Total registers : 1184
+Total pins : 234 / 529 ( 44 % )
 Total virtual pins : 0
-Total memory bits : 0 / 3,981,312 ( 0 % )
-Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total memory bits : 8,192 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 6 / 532 ( 1 % )
 Total PLLs : 0 / 4 ( 0 % )

@@ -83,7 +83,7 @@ always @(posedge clk or negedge rst)
 begin
 	if (rst == 1'b0)
 		reg_storage <= 1024'd0;
-	else if (we)
+	else if (we == 1'b1)
 	begin
 		case (wr)
 			5'd0: reg_storage[31:0] <= wd;

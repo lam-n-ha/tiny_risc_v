@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/simulation/modelsim
 valu
-Z1 !s110 1618286003
+Z1 !s110 1619670789
 !i10b 1
 !s100 LU=RZZ33U16g_Abbi^Vl92
 II7:EP;b;TO47>L_O1QRm>3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1618286003.000000
+Z4 !s108 1619670789.000000
 !s107 C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v|C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v|
 !i113 1
@@ -33,11 +33,11 @@ Z7 tCvgOpt 0
 vinstruction_parser
 R1
 !i10b 1
-!s100 =_78=L@eBUG^RiGnaU7<92
-I>J?gn@ECd?7Y?PoNA]f0W2
+!s100 ij4hH1W>:cK:?Jz?[V`LM1
+IB6_=IdV@6z_2PTiM^eKJ`1
 R2
 R0
-w1618285068
+w1619660060
 8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v
 FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v
 L0 2
@@ -53,35 +53,35 @@ R5
 R6
 R7
 vinstructions
-R1
+Z8 !s110 1619670790
 !i10b 1
-!s100 lPf_3`c`D^mdzTKFfL8SK0
-Ik?VIcAe_EDW>>N>[Q9o1l0
+!s100 ?HNSKYc7YEE4UU=_i@`Pb1
+IQ;?:kQ<kG0`U0AMT91X1R1
 R2
 R0
-w1618282545
-8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v
-FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v
-L0 35
+w1619663391
+8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v
+FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v
+L0 40
 R3
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v|C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v|
+Z9 !s108 1619670790.000000
+!s107 C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v|C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v|
 !i113 1
 R5
 R6
 R7
 vregister_file
-Z8 !s110 1618286007
+R8
 !i10b 1
-!s100 iXngX40@BU4ceBhP?1Ygj0
-I?<8291TXV_1Xk;?UC8AL13
+!s100 W7Xnic>feQ2mPS41VTdVh0
+IkYHhPH8GAGeh;j5U8fDj>0
 R2
 R0
-w1618285944
+w1619661743
 8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v
 FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v
 L0 1
@@ -89,7 +89,7 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1618286007.000000
+R9
 !s107 C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v|C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v|
 !i113 1
@@ -99,11 +99,11 @@ R7
 vtb
 R8
 !i10b 1
-!s100 Pe2n83^<:fP7^7zbil>UJ2
-IEbgZ[MQAn`ghzRR5CU1GJ3
+!s100 RWBobEDTFWj<BN`f1l`iP2
+II]5F;22zVJn<aMcXkGTzc3
 R2
 R0
-w1618285367
+w1619664764
 8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tb.v
 FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tb.v
 L0 3
@@ -121,11 +121,11 @@ R7
 vtiny_risc_v
 R1
 !i10b 1
-!s100 0ehfjaz:HbCWnXAfUzIEE2
-IYMW2@ZDeWF1A992[Q50J40
+!s100 AH@92f8F_az_Un3?Z0iA12
+I=Ioj9EfiLZoKb>74RVZo53
 R2
 R0
-w1618285746
+w1619670469
 8C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v
 FC:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v
 L0 1

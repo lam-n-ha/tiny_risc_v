@@ -60,6 +60,10 @@ module tb;
 	wire [31:0]rd1;
 	wire [31:0]rd2;
 	wire [31:0]wd;
+	wire [31:0]r1, r2;
+	wire [7:0]alu_control;
+	wire [31:0]result;
+	wire [6:0]opcode;
 	
 	
 	tiny_risc_v DUT(
@@ -74,7 +78,11 @@ module tb;
 										rw,
 										rd1,
 										rd2,
-										wd
+										wd,
+										r1, r2,
+										alu_control,
+										result,
+										opcode
 										);
 	
 	initial

@@ -14,7 +14,8 @@ module instruction_parser(
 );
 	assign opcode = instruction[6:0];
 	assign funct3 = instruction[14:12];
-	always @(*) begin
+	always @(*)
+	begin
 		// OP
 		if(opcode == 7'b0110011) begin
 			funct7 = instruction[31:25];

@@ -5,11 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions_bb.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v}
+vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v}
 
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tb.v}
 

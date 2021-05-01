@@ -1,2 +1,3 @@
+Warning (10268): Verilog HDL information at tiny_risc_v.v(127): always construct contains both blocking and non-blocking assignments File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 127
 Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(4): object "start" differs only in case from object "START" in the same scope File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 4
 Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(5): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 5
