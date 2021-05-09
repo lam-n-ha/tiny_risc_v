@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tiny_risc_v
-Thu Apr 29 00:30:19 2021
+Fri May 07 10:08:11 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -24,16 +24,17 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  16. Source assignments for instructions:instruction_from_memory|altsyncram:altsyncram_component|altsyncram_qej1:auto_generated
  17. Parameter Settings for User Entity Instance: Top-level Entity: |tiny_risc_v
  18. Parameter Settings for User Entity Instance: instructions:instruction_from_memory|altsyncram:altsyncram_component
- 19. Parameter Settings for User Entity Instance: alu:my_alu
- 20. Parameter Settings for Inferred Entity Instance: alu:my_alu|lpm_mult:Mult0
- 21. altsyncram Parameter Settings by Entity Instance
- 22. lpm_mult Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "instruction_parser:iparse"
- 24. Port Connectivity Checks: "instructions:instruction_from_memory"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+ 19. Parameter Settings for User Entity Instance: alu:my_alu0
+ 20. Parameter Settings for User Entity Instance: alu:my_alu1
+ 21. Parameter Settings for User Entity Instance: alu:my_alu2
+ 22. Parameter Settings for Inferred Entity Instance: alu:my_alu0|lpm_mult:Mult0
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. lpm_mult Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "alu:my_alu2"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -60,16 +61,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 29 00:30:19 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 07 10:08:11 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; tiny_risc_v                                 ;
 ; Top-level Entity Name              ; tiny_risc_v                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 3,477                                       ;
-;     Total combinational functions  ; 2,459                                       ;
-;     Dedicated logic registers      ; 1,184                                       ;
-; Total registers                    ; 1184                                        ;
-; Total pins                         ; 234                                         ;
+; Total logic elements               ; 3,846                                       ;
+;     Total combinational functions  ; 2,836                                       ;
+;     Dedicated logic registers      ; 1,242                                       ;
+; Total registers                    ; 1242                                        ;
+; Total pins                         ; 284                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 8,192                                       ;
 ; Embedded Multiplier 9-bit elements ; 6                                           ;
@@ -183,7 +184,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processors 9-12        ;   0.0%      ;
+;     Processor 9            ;   0.1%      ;
+;     Processors 10-12       ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -213,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 ; multcore.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_7dt.tdf         ;         ;
+; db/mult_46t.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_46t.tdf         ;         ;
 +----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
 
 
@@ -222,31 +224,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 3,477     ;
+; Estimated Total logic elements              ; 3,846     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2459      ;
+; Total combinational functions               ; 2836      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1747      ;
-;     -- 3 input functions                    ; 557       ;
-;     -- <=2 input functions                  ; 155       ;
+;     -- 4 input functions                    ; 1988      ;
+;     -- 3 input functions                    ; 664       ;
+;     -- <=2 input functions                  ; 184       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2283      ;
-;     -- arithmetic mode                      ; 176       ;
+;     -- normal mode                          ; 2602      ;
+;     -- arithmetic mode                      ; 234       ;
 ;                                             ;           ;
-; Total registers                             ; 1184      ;
-;     -- Dedicated logic registers            ; 1184      ;
+; Total registers                             ; 1242      ;
+;     -- Dedicated logic registers            ; 1242      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 234       ;
+; I/O pins                                    ; 284       ;
 ; Total memory bits                           ; 8192      ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 6         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1216      ;
-; Total fan-out                               ; 14646     ;
-; Average fan-out                             ; 3.53      ;
+; Maximum fan-out                             ; 1274      ;
+; Total fan-out                               ; 16389     ;
+; Average fan-out                             ; 3.50      ;
 +---------------------------------------------+-----------+
 
 
@@ -255,15 +257,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |tiny_risc_v                              ; 2459 (204)          ; 1184 (166)                ; 8192        ; 6            ; 0       ; 3         ; 234  ; 0            ; |tiny_risc_v                                                                                                     ; tiny_risc_v        ; work         ;
-;    |alu:my_alu|                           ; 816 (788)           ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu                                                                                          ; alu                ; work         ;
-;       |lpm_mult:Mult0|                    ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu|lpm_mult:Mult0                                                                           ; lpm_mult           ; work         ;
-;          |mult_7dt:auto_generated|        ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu|lpm_mult:Mult0|mult_7dt:auto_generated                                                   ; mult_7dt           ; work         ;
-;    |instruction_parser:iparse|            ; 59 (59)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|instruction_parser:iparse                                                                           ; instruction_parser ; work         ;
+; |tiny_risc_v                              ; 2836 (493)          ; 1242 (250)                ; 8192        ; 6            ; 0       ; 3         ; 284  ; 0            ; |tiny_risc_v                                                                                                     ; tiny_risc_v        ; work         ;
+;    |alu:my_alu0|                          ; 872 (844)           ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu0                                                                                         ; alu                ; work         ;
+;       |lpm_mult:Mult0|                    ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu0|lpm_mult:Mult0                                                                          ; lpm_mult           ; work         ;
+;          |mult_46t:auto_generated|        ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu0|lpm_mult:Mult0|mult_46t:auto_generated                                                  ; mult_46t           ; work         ;
+;    |alu:my_alu1|                          ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu1                                                                                         ; alu                ; work         ;
+;    |alu:my_alu2|                          ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|alu:my_alu2                                                                                         ; alu                ; work         ;
+;    |instruction_parser:iparse|            ; 86 (86)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|instruction_parser:iparse                                                                           ; instruction_parser ; work         ;
 ;    |instructions:instruction_from_memory| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|instructions:instruction_from_memory                                                                ; instructions       ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|instructions:instruction_from_memory|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
 ;          |altsyncram_qej1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|instructions:instruction_from_memory|altsyncram:altsyncram_component|altsyncram_qej1:auto_generated ; altsyncram_qej1    ; work         ;
-;    |register_file:register|               ; 1380 (1380)         ; 1018 (1018)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|register_file:register                                                                              ; register_file      ; work         ;
+;    |register_file:register|               ; 1327 (1327)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tiny_risc_v|register_file:register                                                                              ; register_file      ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -287,8 +291,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Embedded Multiplier Blocks            ; --          ;
 ; Embedded Multiplier 9-bit elements    ; 6           ;
 ; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 3           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 2           ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
 ; Dedicated Input Shift Register Chains ; 0           ;
 +---------------------------------------+-------------+
@@ -304,101 +308,133 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+---------------------------------------------------+-----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                              ;
-+-----------------------------------------------------+-----------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
-+-----------------------------------------------------+-----------------------------------+------------------------+
-; NS[0]$latch                                         ; Mux9                              ; yes                    ;
-; NS[1]$latch                                         ; Mux9                              ; yes                    ;
-; NS[2]$latch                                         ; Mux9                              ; yes                    ;
-; alu:my_alu|result[0]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[1]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[2]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[3]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[4]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[5]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[6]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[7]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[8]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[9]                                ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[10]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[11]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[12]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[13]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[14]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[15]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[16]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[17]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[18]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[19]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[20]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[21]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[22]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[23]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[24]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[25]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[26]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[27]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[28]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[29]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[30]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; alu:my_alu|result[31]                               ; alu:my_alu|WideOr0                ; yes                    ;
-; instruction_parser:iparse|s1[0]                     ; instruction_parser:iparse|s1[4]   ; yes                    ;
-; instruction_parser:iparse|s1[1]                     ; instruction_parser:iparse|s1[4]   ; yes                    ;
-; instruction_parser:iparse|s1[2]                     ; instruction_parser:iparse|s1[4]   ; yes                    ;
-; instruction_parser:iparse|s1[3]                     ; instruction_parser:iparse|s1[4]   ; yes                    ;
-; instruction_parser:iparse|s1[4]                     ; instruction_parser:iparse|s1[4]   ; yes                    ;
-; instruction_parser:iparse|s2[0]                     ; instruction_parser:iparse|s2[4]   ; yes                    ;
-; instruction_parser:iparse|s2[1]                     ; instruction_parser:iparse|s2[4]   ; yes                    ;
-; instruction_parser:iparse|s2[2]                     ; instruction_parser:iparse|s2[4]   ; yes                    ;
-; instruction_parser:iparse|s2[3]                     ; instruction_parser:iparse|s2[4]   ; yes                    ;
-; instruction_parser:iparse|s2[4]                     ; instruction_parser:iparse|s2[4]   ; yes                    ;
-; instruction_parser:iparse|de[0]                     ; instruction_parser:iparse|de[4]   ; yes                    ;
-; instruction_parser:iparse|de[1]                     ; instruction_parser:iparse|de[4]   ; yes                    ;
-; instruction_parser:iparse|de[2]                     ; instruction_parser:iparse|de[4]   ; yes                    ;
-; instruction_parser:iparse|de[3]                     ; instruction_parser:iparse|de[4]   ; yes                    ;
-; instruction_parser:iparse|de[4]                     ; instruction_parser:iparse|de[4]   ; yes                    ;
-; instruction_parser:iparse|i12[0]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i5[0]                     ; instruction_parser:iparse|i5[4]   ; yes                    ;
-; instruction_parser:iparse|i12[1]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i5[1]                     ; instruction_parser:iparse|i5[4]   ; yes                    ;
-; instruction_parser:iparse|i12[2]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i5[2]                     ; instruction_parser:iparse|i5[4]   ; yes                    ;
-; instruction_parser:iparse|i12[3]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i5[3]                     ; instruction_parser:iparse|i5[4]   ; yes                    ;
-; instruction_parser:iparse|i12[4]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i5[4]                     ; instruction_parser:iparse|i5[4]   ; yes                    ;
-; instruction_parser:iparse|i12[5]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[6]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[7]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[8]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[9]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[10]                   ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|i12[11]                   ; instruction_parser:iparse|i12[11] ; yes                    ;
-; instruction_parser:iparse|funct7[0]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[1]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[2]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[3]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[4]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[5]                 ; Equal2                            ; yes                    ;
-; instruction_parser:iparse|funct7[6]                 ; Equal2                            ; yes                    ;
-; Number of user-specified and inferred latches = 74  ;                                   ;                        ;
-+-----------------------------------------------------+-----------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++------------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal               ; Free of Timing Hazards ;
++------------------------------------------------------+-----------------------------------+------------------------+
+; instruction_parser:iparse|i12[0]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[1]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[2]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[3]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[4]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[5]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[6]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[7]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[8]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[9]                     ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[10]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|i12[11]                    ; instruction_parser:iparse|i12[11] ; yes                    ;
+; instruction_parser:iparse|de[4]                      ; instruction_parser:iparse|de[4]   ; yes                    ;
+; instruction_parser:iparse|de[3]                      ; instruction_parser:iparse|de[4]   ; yes                    ;
+; instruction_parser:iparse|de[2]                      ; instruction_parser:iparse|de[4]   ; yes                    ;
+; instruction_parser:iparse|de[1]                      ; instruction_parser:iparse|de[4]   ; yes                    ;
+; instruction_parser:iparse|de[0]                      ; instruction_parser:iparse|de[4]   ; yes                    ;
+; alu:my_alu0|result[0]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[1]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[2]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[3]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[4]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[5]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[6]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[7]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[8]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[9]                                ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[10]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[11]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[12]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[13]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[14]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[15]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[16]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[17]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[18]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[19]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[20]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[21]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[22]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[23]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[24]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[25]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[26]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[27]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[28]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[29]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[30]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu0|result[31]                               ; alu:my_alu0|WideOr0               ; yes                    ;
+; alu:my_alu1|result[7]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[7]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[6]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[6]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[5]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[5]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[4]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[4]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[3]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[3]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[2]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[2]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[1]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[1]                                ; alucon[0]                         ; yes                    ;
+; alu:my_alu1|result[0]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu2|result[0]                                ; alucon[0]                         ; yes                    ;
+; instruction_parser:iparse|s1[0]                      ; instruction_parser:iparse|s1[4]   ; yes                    ;
+; instruction_parser:iparse|s1[1]                      ; instruction_parser:iparse|s1[4]   ; yes                    ;
+; instruction_parser:iparse|s1[2]                      ; instruction_parser:iparse|s1[4]   ; yes                    ;
+; instruction_parser:iparse|s1[3]                      ; instruction_parser:iparse|s1[4]   ; yes                    ;
+; instruction_parser:iparse|s1[4]                      ; instruction_parser:iparse|s1[4]   ; yes                    ;
+; instruction_parser:iparse|s2[0]                      ; instruction_parser:iparse|s2[4]   ; yes                    ;
+; instruction_parser:iparse|s2[1]                      ; instruction_parser:iparse|s2[4]   ; yes                    ;
+; instruction_parser:iparse|s2[2]                      ; instruction_parser:iparse|s2[4]   ; yes                    ;
+; instruction_parser:iparse|s2[3]                      ; instruction_parser:iparse|s2[4]   ; yes                    ;
+; instruction_parser:iparse|s2[4]                      ; instruction_parser:iparse|s2[4]   ; yes                    ;
+; alu:my_alu1|result[8]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[9]                                ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[10]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[11]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[12]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[13]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[14]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[15]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[16]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[17]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[18]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[19]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[20]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[21]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[22]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[23]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[24]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[25]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[26]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[27]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[28]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[29]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[30]                               ; aluc[0]                           ; yes                    ;
+; alu:my_alu1|result[31]                               ; aluc[0]                           ; yes                    ;
+; instruction_parser:iparse|i5[0]                      ; instruction_parser:iparse|i5[4]   ; yes                    ;
+; Number of user-specified and inferred latches = 138  ;                                   ;                        ;
++------------------------------------------------------+-----------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; S[3]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; alu_control[5]~reg0                   ; Merged with alu_control[4]~reg0        ;
-; alu_control[6]~reg0                   ; Merged with alu_control[4]~reg0        ;
-; alu_control[7]~reg0                   ; Merged with alu_control[4]~reg0        ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; S[3]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; aluin1[8..31]                           ; Stuck at GND due to stuck port data_in ;
+; aluin2[1..31]                           ; Stuck at GND due to stuck port data_in ;
+; alu_control[6]~reg0                     ; Merged with alu_control[5]~reg0        ;
+; alu_control[7]~reg0                     ; Merged with alu_control[5]~reg0        ;
+; alucon[1..7]                            ; Merged with alucon[0]                  ;
+; in2[20..31]                             ; Merged with in2[19]                    ;
+; in1[8,9,11..31]                         ; Merged with in1[10]                    ;
+; aluc[1..7]                              ; Merged with aluc[0]                    ;
+; in1[10]                                 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 108 ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -406,12 +442,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1184  ;
-; Number of registers using Synchronous Clear  ; 42    ;
-; Number of registers using Synchronous Load   ; 12    ;
-; Number of registers using Asynchronous Clear ; 1184  ;
+; Total registers                              ; 1242  ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 38    ;
+; Number of registers using Asynchronous Clear ; 1240  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1176  ;
+; Number of registers using Clock Enable       ; 1232  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -421,44 +457,47 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; alu_control[0]~reg0                     ; 104     ;
-; alu_control[1]~reg0                     ; 109     ;
-; alu_control[2]~reg0                     ; 34      ;
-; alu_control[3]~reg0                     ; 35      ;
-; alu_control[4]~reg0                     ; 10      ;
-; instruction[0]                          ; 4       ;
-; instruction[1]                          ; 4       ;
-; instruction[2]                          ; 4       ;
-; instruction[3]                          ; 4       ;
-; instruction[4]                          ; 13      ;
-; instruction[5]                          ; 12      ;
-; instruction[6]                          ; 7       ;
-; instruction[13]                         ; 14      ;
-; instruction[12]                         ; 14      ;
-; instruction[14]                         ; 6       ;
-; instruction[15]                         ; 1       ;
-; instruction[16]                         ; 1       ;
-; instruction[17]                         ; 1       ;
-; instruction[18]                         ; 1       ;
-; instruction[19]                         ; 1       ;
+; instruction[3]                          ; 63      ;
+; instruction[2]                          ; 93      ;
+; instruction[1]                          ; 11      ;
+; instruction[0]                          ; 11      ;
+; instruction[6]                          ; 67      ;
+; instruction[4]                          ; 50      ;
+; instruction[5]                          ; 39      ;
+; instruction[14]                         ; 15      ;
+; instruction[13]                         ; 20      ;
+; instruction[12]                         ; 17      ;
+; alu_control[0]~reg0                     ; 110     ;
+; alu_control[1]~reg0                     ; 113     ;
+; alu_control[2]~reg0                     ; 37      ;
+; alu_control[3]~reg0                     ; 41      ;
+; alu_control[4]~reg0                     ; 28      ;
+; alu_control[5]~reg0                     ; 9       ;
+; instruction[28]                         ; 4       ;
+; instruction[29]                         ; 4       ;
+; instruction[30]                         ; 4       ;
+; instruction[31]                         ; 4       ;
+; instruction[11]                         ; 2       ;
+; instruction[10]                         ; 2       ;
+; instruction[9]                          ; 2       ;
+; instruction[8]                          ; 2       ;
+; instruction[7]                          ; 2       ;
 ; instruction[20]                         ; 4       ;
 ; instruction[21]                         ; 4       ;
 ; instruction[22]                         ; 4       ;
 ; instruction[23]                         ; 4       ;
 ; instruction[24]                         ; 4       ;
-; instruction[7]                          ; 2       ;
-; instruction[8]                          ; 2       ;
-; instruction[9]                          ; 2       ;
-; instruction[10]                         ; 2       ;
-; instruction[11]                         ; 2       ;
-; instruction[25]                         ; 2       ;
-; instruction[26]                         ; 2       ;
-; instruction[27]                         ; 2       ;
-; instruction[28]                         ; 2       ;
-; instruction[29]                         ; 2       ;
-; instruction[30]                         ; 2       ;
-; instruction[31]                         ; 2       ;
-; Total number of inverted registers = 37 ;         ;
+; instruction[25]                         ; 4       ;
+; instruction[26]                         ; 4       ;
+; instruction[27]                         ; 4       ;
+; aluc[0]                                 ; 22      ;
+; alucon[0]                               ; 9       ;
+; instruction[15]                         ; 2       ;
+; instruction[16]                         ; 2       ;
+; instruction[17]                         ; 2       ;
+; instruction[18]                         ; 2       ;
+; instruction[19]                         ; 2       ;
+; Total number of inverted registers = 40 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -467,27 +506,37 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |tiny_risc_v|wd[28]~reg0                  ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |tiny_risc_v|PC[5]                        ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |tiny_risc_v|readwait[0]                  ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |tiny_risc_v|rr2[1]~reg0                  ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |tiny_risc_v|wr[4]~reg0                   ;
-; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |tiny_risc_v|r2[13]~reg0                  ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |tiny_risc_v|instruction[0]               ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |tiny_risc_v|r1[9]~reg0                   ;
-; 11:1               ; 7 bits    ; 49 LEs        ; 14 LEs               ; 35 LEs                 ; Yes        ; |tiny_risc_v|r2[9]~reg0                   ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |tiny_risc_v|r2[3]~reg0                   ;
-; 32:1               ; 6 bits    ; 126 LEs       ; 120 LEs              ; 6 LEs                  ; No         ; |tiny_risc_v|register_file:register|Mux2  ;
-; 32:1               ; 26 bits   ; 546 LEs       ; 546 LEs              ; 0 LEs                  ; No         ; |tiny_risc_v|register_file:register|Mux11 ;
-; 32:1               ; 6 bits    ; 126 LEs       ; 120 LEs              ; 6 LEs                  ; No         ; |tiny_risc_v|register_file:register|Mux36 ;
-; 32:1               ; 26 bits   ; 546 LEs       ; 546 LEs              ; 0 LEs                  ; No         ; |tiny_risc_v|register_file:register|Mux54 ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector22        ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector20        ;
-; 17:1               ; 7 bits    ; 77 LEs        ; 70 LEs               ; 7 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector12        ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector26        ;
-; 18:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector7         ;
-; 18:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector30        ;
-; 19:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |tiny_risc_v|alu:my_alu|Selector4         ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |tiny_risc_v|memwait[0]                   ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |tiny_risc_v|writewait[0]                 ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |tiny_risc_v|double[2]                    ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |tiny_risc_v|mem_in[4]~reg0               ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |tiny_risc_v|mem_lo[0]~reg0               ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |tiny_risc_v|wd[30]~reg0                  ;
+; 68:1               ; 6 bits    ; 270 LEs       ; 12 LEs               ; 258 LEs                ; Yes        ; |tiny_risc_v|in2[5]                       ;
+; 68:1               ; 8 bits    ; 360 LEs       ; 0 LEs                ; 360 LEs                ; Yes        ; |tiny_risc_v|in1[1]                       ;
+; 136:1              ; 5 bits    ; 450 LEs       ; 5 LEs                ; 445 LEs                ; Yes        ; |tiny_risc_v|wr[3]~reg0                   ;
+; 69:1               ; 14 bits   ; 644 LEs       ; 28 LEs               ; 616 LEs                ; Yes        ; |tiny_risc_v|in2[11]                      ;
+; 136:1              ; 5 bits    ; 450 LEs       ; 5 LEs                ; 445 LEs                ; Yes        ; |tiny_risc_v|rr2[0]~reg0                  ;
+; 136:1              ; 5 bits    ; 450 LEs       ; 5 LEs                ; 445 LEs                ; Yes        ; |tiny_risc_v|rr1[1]~reg0                  ;
+; 136:1              ; 8 bits    ; 720 LEs       ; 32 LEs               ; 688 LEs                ; Yes        ; |tiny_risc_v|PC[7]~reg0                   ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |tiny_risc_v|instruction[14]              ;
+; 136:1              ; 2 bits    ; 180 LEs       ; 8 LEs                ; 172 LEs                ; Yes        ; |tiny_risc_v|alu_control[4]~reg0          ;
+; 137:1              ; 24 bits   ; 2184 LEs      ; 24 LEs               ; 2160 LEs               ; Yes        ; |tiny_risc_v|r1[25]~reg0                  ;
+; 75:1               ; 8 bits    ; 400 LEs       ; 16 LEs               ; 384 LEs                ; Yes        ; |tiny_risc_v|r1[0]~reg0                   ;
+; 79:1               ; 5 bits    ; 260 LEs       ; 20 LEs               ; 240 LEs                ; Yes        ; |tiny_risc_v|r2[6]~reg0                   ;
+; 49:1               ; 21 bits   ; 672 LEs       ; 84 LEs               ; 588 LEs                ; Yes        ; |tiny_risc_v|r2[27]~reg0                  ;
+; 80:1               ; 6 bits    ; 318 LEs       ; 24 LEs               ; 294 LEs                ; Yes        ; |tiny_risc_v|r2[0]~reg0                   ;
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |tiny_risc_v|alu:my_alu2|Selector26       ;
+; 1:1                ; 32 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |tiny_risc_v|alu:my_alu1|Selector24       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |tiny_risc_v|register_file:register|Mux18 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |tiny_risc_v|register_file:register|Mux34 ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector23       ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector19       ;
+; 23:1               ; 7 bits    ; 105 LEs       ; 70 LEs               ; 35 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector11       ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector26       ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 40 LEs               ; 24 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector7        ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 22 LEs               ; 10 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector30       ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 20 LEs               ; 12 LEs                 ; No         ; |tiny_risc_v|alu:my_alu0|Selector4        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -508,9 +557,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; START          ; 0000  ; Unsigned Binary                                    ;
 ; FETCH          ; 0001  ; Unsigned Binary                                    ;
 ; EXECUTE        ; 0010  ; Unsigned Binary                                    ;
-; READREG        ; 0011  ; Unsigned Binary                                    ;
-; WRITEBACK      ; 0100  ; Unsigned Binary                                    ;
-; WRITEREG       ; 0101  ; Unsigned Binary                                    ;
+; WRITEBACK      ; 0011  ; Unsigned Binary                                    ;
+; WRITEREG       ; 0100  ; Unsigned Binary                                    ;
+; WRITEMEM       ; 0101  ; Unsigned Binary                                    ;
 ; DONE           ; 0110  ; Unsigned Binary                                    ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -577,30 +626,107 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: alu:my_alu ;
-+----------------+----------+-----------------------------+
-; Parameter Name ; Value    ; Type                        ;
-+----------------+----------+-----------------------------+
-; ADD            ; 00000000 ; Unsigned Binary             ;
-; SUB            ; 00000001 ; Unsigned Binary             ;
-; AND            ; 00000010 ; Unsigned Binary             ;
-; OR             ; 00000011 ; Unsigned Binary             ;
-; XOR            ; 00000100 ; Unsigned Binary             ;
-; SLT            ; 00000101 ; Unsigned Binary             ;
-; SLTU           ; 00000110 ; Unsigned Binary             ;
-; SRA            ; 00000111 ; Unsigned Binary             ;
-; SRL            ; 00001000 ; Unsigned Binary             ;
-; SLL            ; 00001001 ; Unsigned Binary             ;
-; MUL            ; 00001010 ; Unsigned Binary             ;
-; LUI            ; 00001011 ; Unsigned Binary             ;
-; AUIPC          ; 00001100 ; Unsigned Binary             ;
-+----------------+----------+-----------------------------+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:my_alu0 ;
++----------------+----------+------------------------------+
+; Parameter Name ; Value    ; Type                         ;
++----------------+----------+------------------------------+
+; ADD            ; 00000000 ; Unsigned Binary              ;
+; SUB            ; 00000001 ; Unsigned Binary              ;
+; AND            ; 00000010 ; Unsigned Binary              ;
+; OR             ; 00000011 ; Unsigned Binary              ;
+; XOR            ; 00000100 ; Unsigned Binary              ;
+; SLT            ; 00000101 ; Unsigned Binary              ;
+; SLTU           ; 00000110 ; Unsigned Binary              ;
+; SRA            ; 00000111 ; Unsigned Binary              ;
+; SRL            ; 00001000 ; Unsigned Binary              ;
+; SLL            ; 00001001 ; Unsigned Binary              ;
+; MUL            ; 00001010 ; Unsigned Binary              ;
+; LUI            ; 00001011 ; Unsigned Binary              ;
+; AUIPC          ; 00001100 ; Unsigned Binary              ;
+; LW             ; 00001101 ; Unsigned Binary              ;
+; SW             ; 00001110 ; Unsigned Binary              ;
+; JAL            ; 00001111 ; Unsigned Binary              ;
+; JR             ; 00010000 ; Unsigned Binary              ;
+; JALR           ; 00010001 ; Unsigned Binary              ;
+; BEQ            ; 00010010 ; Unsigned Binary              ;
+; BNE            ; 00010011 ; Unsigned Binary              ;
+; BLT            ; 00010100 ; Unsigned Binary              ;
+; BGE            ; 00010101 ; Unsigned Binary              ;
+; BLTU           ; 00010110 ; Unsigned Binary              ;
+; BGEU           ; 00010111 ; Unsigned Binary              ;
++----------------+----------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:my_alu1 ;
++----------------+----------+------------------------------+
+; Parameter Name ; Value    ; Type                         ;
++----------------+----------+------------------------------+
+; ADD            ; 00000000 ; Unsigned Binary              ;
+; SUB            ; 00000001 ; Unsigned Binary              ;
+; AND            ; 00000010 ; Unsigned Binary              ;
+; OR             ; 00000011 ; Unsigned Binary              ;
+; XOR            ; 00000100 ; Unsigned Binary              ;
+; SLT            ; 00000101 ; Unsigned Binary              ;
+; SLTU           ; 00000110 ; Unsigned Binary              ;
+; SRA            ; 00000111 ; Unsigned Binary              ;
+; SRL            ; 00001000 ; Unsigned Binary              ;
+; SLL            ; 00001001 ; Unsigned Binary              ;
+; MUL            ; 00001010 ; Unsigned Binary              ;
+; LUI            ; 00001011 ; Unsigned Binary              ;
+; AUIPC          ; 00001100 ; Unsigned Binary              ;
+; LW             ; 00001101 ; Unsigned Binary              ;
+; SW             ; 00001110 ; Unsigned Binary              ;
+; JAL            ; 00001111 ; Unsigned Binary              ;
+; JR             ; 00010000 ; Unsigned Binary              ;
+; JALR           ; 00010001 ; Unsigned Binary              ;
+; BEQ            ; 00010010 ; Unsigned Binary              ;
+; BNE            ; 00010011 ; Unsigned Binary              ;
+; BLT            ; 00010100 ; Unsigned Binary              ;
+; BGE            ; 00010101 ; Unsigned Binary              ;
+; BLTU           ; 00010110 ; Unsigned Binary              ;
+; BGEU           ; 00010111 ; Unsigned Binary              ;
++----------------+----------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:my_alu2 ;
++----------------+----------+------------------------------+
+; Parameter Name ; Value    ; Type                         ;
++----------------+----------+------------------------------+
+; ADD            ; 00000000 ; Unsigned Binary              ;
+; SUB            ; 00000001 ; Unsigned Binary              ;
+; AND            ; 00000010 ; Unsigned Binary              ;
+; OR             ; 00000011 ; Unsigned Binary              ;
+; XOR            ; 00000100 ; Unsigned Binary              ;
+; SLT            ; 00000101 ; Unsigned Binary              ;
+; SLTU           ; 00000110 ; Unsigned Binary              ;
+; SRA            ; 00000111 ; Unsigned Binary              ;
+; SRL            ; 00001000 ; Unsigned Binary              ;
+; SLL            ; 00001001 ; Unsigned Binary              ;
+; MUL            ; 00001010 ; Unsigned Binary              ;
+; LUI            ; 00001011 ; Unsigned Binary              ;
+; AUIPC          ; 00001100 ; Unsigned Binary              ;
+; LW             ; 00001101 ; Unsigned Binary              ;
+; SW             ; 00001110 ; Unsigned Binary              ;
+; JAL            ; 00001111 ; Unsigned Binary              ;
+; JR             ; 00010000 ; Unsigned Binary              ;
+; JALR           ; 00010001 ; Unsigned Binary              ;
+; BEQ            ; 00010010 ; Unsigned Binary              ;
+; BNE            ; 00010011 ; Unsigned Binary              ;
+; BLT            ; 00010100 ; Unsigned Binary              ;
+; BGE            ; 00010101 ; Unsigned Binary              ;
+; BLTU           ; 00010110 ; Unsigned Binary              ;
+; BGEU           ; 00010111 ; Unsigned Binary              ;
++----------------+----------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: alu:my_alu|lpm_mult:Mult0          ;
+; Parameter Settings for Inferred Entity Instance: alu:my_alu0|lpm_mult:Mult0         ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -613,7 +739,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LPM_WIDTHP                                     ; 64           ; Untyped             ;
 ; LPM_WIDTHR                                     ; 64           ; Untyped             ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped             ;
 ; LATENCY                                        ; 0            ; Untyped             ;
 ; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
@@ -626,7 +752,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
 ; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
 ; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped             ;
 ; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
 ; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
 ; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
@@ -654,44 +780,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                    ;
-+---------------------------------------+---------------------------+
-; Name                                  ; Value                     ;
-+---------------------------------------+---------------------------+
-; Number of entity instances            ; 1                         ;
-; Entity Instance                       ; alu:my_alu|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 32                        ;
-;     -- LPM_WIDTHB                     ; 32                        ;
-;     -- LPM_WIDTHP                     ; 64                        ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                  ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                        ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                        ;
-;     -- USE_EAB                        ; OFF                       ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                      ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                        ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                        ;
-+---------------------------------------+---------------------------+
++--------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                     ;
++---------------------------------------+----------------------------+
+; Name                                  ; Value                      ;
++---------------------------------------+----------------------------+
+; Number of entity instances            ; 1                          ;
+; Entity Instance                       ; alu:my_alu0|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                         ;
+;     -- LPM_WIDTHB                     ; 32                         ;
+;     -- LPM_WIDTHP                     ; 64                         ;
+;     -- LPM_REPRESENTATION             ; SIGNED                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                         ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                         ;
+;     -- USE_EAB                        ; OFF                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                         ;
++---------------------------------------+----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "instruction_parser:iparse"                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; i7      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; address ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------+
-; Port Connectivity Checks: "instructions:instruction_from_memory" ;
-+------+-------+----------+----------------------------------------+
-; Port ; Type  ; Severity ; Details                                ;
-+------+-------+----------+----------------------------------------+
-; data ; Input ; Info     ; Stuck at GND                           ;
-; wren ; Input ; Info     ; Stuck at GND                           ;
-+------+-------+----------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:my_alu2"                                                                                 ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; result[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -699,28 +814,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 234                         ;
-; cycloneiii_ff         ; 1184                        ;
-;     CLR               ; 8                           ;
-;     ENA CLR           ; 1134                        ;
-;     ENA CLR SCLR      ; 30                          ;
-;     ENA CLR SCLR SLD  ; 12                          ;
-; cycloneiii_lcell_comb ; 2471                        ;
-;     arith             ; 176                         ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 169                         ;
-;     normal            ; 2295                        ;
+; boundary_port         ; 284                         ;
+; cycloneiii_ff         ; 1242                        ;
+;     CLR               ; 9                           ;
+;     ENA CLR           ; 1162                        ;
+;     ENA CLR SCLR      ; 31                          ;
+;     ENA CLR SLD       ; 38                          ;
+;     ENA SCLR          ; 1                           ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 2850                        ;
+;     arith             ; 234                         ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 209                         ;
+;     normal            ; 2616                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 146                         ;
-;         3 data inputs ; 388                         ;
-;         4 data inputs ; 1747                        ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 155                         ;
+;         3 data inputs ; 455                         ;
+;         4 data inputs ; 1988                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.39                        ;
+; Max LUT depth         ; 11.60                       ;
+; Average LUT depth     ; 6.04                        ;
 +-----------------------+-----------------------------+
 
 
@@ -729,7 +846,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -739,7 +856,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Apr 29 00:30:05 2021
+    Info: Processing started: Fri May 07 10:07:52 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tiny_risc_v -c tiny_risc_v
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -757,16 +874,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: testbench File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/testbench.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file instructions.v
     Info (12023): Found entity 1: instructions File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file instructions2.v
+    Info (12023): Found entity 1: instructions2 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions2.v Line: 40
 Info (12127): Elaborating entity "tiny_risc_v" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at tiny_risc_v.v(92): incomplete case statement has no default case item File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Warning (10240): Verilog HDL Always Construct warning at tiny_risc_v.v(92): inferring latch(es) for variable "NS", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(167): truncated value with size 32 to match size of target (1) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 167
-Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(328): truncated value with size 32 to match size of target (1) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 328
-Info (10041): Inferred latch for "NS[0]" at tiny_risc_v.v(92) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Info (10041): Inferred latch for "NS[1]" at tiny_risc_v.v(92) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Info (10041): Inferred latch for "NS[2]" at tiny_risc_v.v(92) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Info (10041): Inferred latch for "NS[3]" at tiny_risc_v.v(92) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-Info (12128): Elaborating entity "instructions" for hierarchy "instructions:instruction_from_memory" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 63
+Warning (10036): Verilog HDL or VHDL warning at tiny_risc_v.v(66): object "readwait" assigned a value but never read File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 66
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(515): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 515
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(520): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 520
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(594): truncated value with size 3 to match size of target (2) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 594
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(610): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 610
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(615): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 615
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(617): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 617
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(625): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 625
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(627): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 627
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(632): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 632
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(634): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 634
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(639): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 639
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(641): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 641
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(646): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 646
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(648): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 648
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(653): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 653
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(655): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 655
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(660): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 660
+Warning (10230): Verilog HDL assignment warning at tiny_risc_v.v(662): truncated value with size 32 to match size of target (8) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 662
+Info (12128): Elaborating entity "instructions" for hierarchy "instructions:instruction_from_memory" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 80
 Info (12128): Elaborating entity "altsyncram" for hierarchy "instructions:instruction_from_memory|altsyncram:altsyncram_component" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v Line: 86
 Info (12130): Elaborated megafunction instantiation "instructions:instruction_from_memory|altsyncram:altsyncram_component" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v Line: 86
 Info (12133): Instantiated megafunction "instructions:instruction_from_memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v Line: 86
@@ -788,7 +918,7 @@ Info (12133): Instantiated megafunction "instructions:instruction_from_memory|al
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qej1.tdf
     Info (12023): Found entity 1: altsyncram_qej1 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/altsyncram_qej1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_qej1" for hierarchy "instructions:instruction_from_memory|altsyncram:altsyncram_component|altsyncram_qej1:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "instruction_parser" for hierarchy "instruction_parser:iparse" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 65
+Info (12128): Elaborating entity "instruction_parser" for hierarchy "instruction_parser:iparse" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 82
 Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(20): inferring latch(es) for variable "funct7", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
 Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(20): inferring latch(es) for variable "s2", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
 Warning (10240): Verilog HDL Always Construct warning at instruction_parser.v(20): inferring latch(es) for variable "s1", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
@@ -863,167 +993,170 @@ Info (10041): Inferred latch for "funct7[3]" at instruction_parser.v(20) File: C
 Info (10041): Inferred latch for "funct7[4]" at instruction_parser.v(20) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
 Info (10041): Inferred latch for "funct7[5]" at instruction_parser.v(20) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
 Info (10041): Inferred latch for "funct7[6]" at instruction_parser.v(20) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 20
-Info (12128): Elaborating entity "alu" for hierarchy "alu:my_alu" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 71
-Warning (10270): Verilog HDL Case Statement warning at alu.v(47): incomplete case statement has no default case item File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 47
-Warning (10240): Verilog HDL Always Construct warning at alu.v(36): inferring latch(es) for variable "AUIPCim", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Warning (10240): Verilog HDL Always Construct warning at alu.v(36): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[0]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[1]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[2]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[3]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[4]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[5]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[6]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[7]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[8]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[9]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[10]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[11]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[12]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[13]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[14]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[15]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[16]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[17]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[18]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[19]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[20]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[21]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[22]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[23]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[24]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[25]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[26]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[27]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[28]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[29]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[30]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (10041): Inferred latch for "result[31]" at alu.v(36) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 78
-Warning (10230): Verilog HDL assignment warning at register_file.v(41): truncated value with size 39 to match size of target (32) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 41
-Warning (10230): Verilog HDL assignment warning at register_file.v(76): truncated value with size 39 to match size of target (32) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 76
-Warning (10230): Verilog HDL assignment warning at register_file.v(119): truncated value with size 32 to match size of target (26) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v Line: 119
+Info (12128): Elaborating entity "alu" for hierarchy "alu:my_alu0" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 88
+Warning (10270): Verilog HDL Case Statement warning at alu.v(64): incomplete case statement has no default case item File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 64
+Warning (10240): Verilog HDL Always Construct warning at alu.v(51): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Warning (10240): Verilog HDL Always Construct warning at alu.v(51): inferring latch(es) for variable "AUIPCim", which holds its previous value in one or more paths through the always construct File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[0]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[1]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[2]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[3]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[4]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[5]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[6]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[7]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[8]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[9]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[10]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[11]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[12]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[13]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[14]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[15]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[16]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[17]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[18]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[19]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[20]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[21]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[22]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[23]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[24]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[25]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[26]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[27]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[28]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[29]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[30]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (10041): Inferred latch for "result[31]" at alu.v(51) File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 107
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "alu:my_alu|Mult0" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 155
-Info (12130): Elaborated megafunction instantiation "alu:my_alu|lpm_mult:Mult0" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 155
-Info (12133): Instantiated megafunction "alu:my_alu|lpm_mult:Mult0" with the following parameter: File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 155
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "alu:my_alu0|Mult0" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 172
+Info (12130): Elaborated megafunction instantiation "alu:my_alu0|lpm_mult:Mult0" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 172
+Info (12133): Instantiated megafunction "alu:my_alu0|lpm_mult:Mult0" with the following parameter: File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 172
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
     Info (12134): Parameter "LPM_WIDTHR" = "64"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
-    Info (12023): Found entity 1: mult_7dt File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_7dt.tdf Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
+    Info (12023): Found entity 1: mult_46t File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_46t.tdf Line: 31
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following DSP element node(s):
-        Warning (14320): Synthesized away node "alu:my_alu|lpm_mult:Mult0|mult_7dt:auto_generated|mac_mult7" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_7dt.tdf Line: 67
-        Warning (14320): Synthesized away node "alu:my_alu|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out8" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_7dt.tdf Line: 91
+        Warning (14320): Synthesized away node "alu:my_alu0|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult7" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_46t.tdf Line: 67
+        Warning (14320): Synthesized away node "alu:my_alu0|lpm_mult:Mult0|mult_46t:auto_generated|mac_out8" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/db/mult_46t.tdf Line: 91
 Info (13014): Ignored 84 buffer(s)
     Info (13019): Ignored 84 SOFT buffer(s)
-Warning (13012): Latch NS[0]$latch has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal S[2]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 86
-Warning (13012): Latch NS[1]$latch has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal S[2]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 86
-Warning (13012): Latch NS[2]$latch has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal S[2]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 86
-Warning (13012): Latch alu:my_alu|result[0] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[1] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[2] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[3] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[4] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[5] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[6] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[7] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[8] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[9] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[10] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[11] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[12] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[13] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[14] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[15] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[16] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[17] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[18] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[19] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[20] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[21] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[22] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[23] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[24] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[25] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[26] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[27] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[28] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[29] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[30] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Warning (13012): Latch alu:my_alu|result[31] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[23]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[21]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[22]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[24]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[25]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[26]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[27]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[28]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[29]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[30]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Info (13026): Duplicate LATCH primitive "alu:my_alu1|result[31]" merged with LATCH primitive "alu:my_alu1|result[20]" File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+Warning (13012): Latch alu:my_alu0|result[0] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[5]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[1] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[5]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[2] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[3] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[4] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[5] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[6] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[7] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[8] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[9] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[10] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[11] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[4]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[12] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[13] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[14] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[15] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[0]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[16] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[5]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[17] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[18] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[19] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[20] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[21] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[22] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[23] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[24] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[25] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[26] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[27] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[28] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[29] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[3]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[30] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[5]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Warning (13012): Latch alu:my_alu0|result[31] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v Line: 51
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_control[5]~reg0 File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Warning (13012): Latch instruction_parser:iparse|i5[0] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Warning (13012): Latch instruction_parser:iparse|i5[1] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Warning (13012): Latch instruction_parser:iparse|i5[2] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Warning (13012): Latch instruction_parser:iparse|i5[3] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Warning (13012): Latch instruction_parser:iparse|i5[4] has unsafe behavior File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instruction_parser.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
-Info (13000): Registers with preset signals will power-up high File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction[6] File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
+Info (13000): Registers with preset signals will power-up high File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 196
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "S[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 86
-    Warning (13410): Pin "NS[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 92
+    Warning (13410): Pin "S[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 116
+    Warning (13410): Pin "NS[3]" is stuck at GND File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/output_files/tiny_risc_v.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3759 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4171 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 231 output pins
-    Info (21061): Implemented 3487 logic cells
+    Info (21059): Implemented 281 output pins
+    Info (21061): Implemented 3849 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 106 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Thu Apr 29 00:30:19 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Fri May 07 10:08:11 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+

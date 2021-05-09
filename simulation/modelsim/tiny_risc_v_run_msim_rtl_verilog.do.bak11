@@ -9,7 +9,7 @@ vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/t
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/alu.v}
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/register_file.v}
-vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions.v}
+vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/instructions2.v}
 
 vlog -vlog01compat -work work +incdir+C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v {C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tb.v}
 

@@ -1,6 +1,6 @@
 module alu(
-input [31:0]s1,
-input [31:0]s2,
+input signed[31:0]r1,
+input signed[31:0]r2,
 input [7:0]alu_control,
 output reg[31:0]result);
 
@@ -30,9 +30,26 @@ parameter SLL = 8'd9;
 parameter MUL = 8'd10;
 parameter LUI = 8'd11;
 parameter AUIPC = 8'd12;
+parameter LW = 8'd13;
+parameter SW = 8'd14;
+parameter JAL = 8'd15;
+parameter JR = 8'd16;
+parameter JALR = 8'd17;
+parameter BEQ = 8'd18;
+parameter BNE = 8'd19;
+parameter BLT = 8'd20;
+parameter BGE = 8'd21;
+parameter BLTU = 8'd22;
+parameter BGEU = 8'd23;
+
+reg [31:0]s1;
+reg [31:0]s2;
+
 
 always @(*)
 begin
+		s1 = $signed(r1);
+		s2 = $signed(r2);
 		SRFILL = 16'd0;
 		SRL_1 = 32'd0;
 		SRL_2 = 32'd0;
@@ -45,25 +62,25 @@ begin
 		SLL_8 = 32'd0;
 		
 	case (alu_control)
-		ADD: //ADD or ADDI
+		ADD: //ADD or ADDI or JAL or JR or JALR
 		begin
 			result = s1+s2;
 		end
 		SUB: //SUB
 		begin
-			result = s1-s2;
+			result = $signed(s1)-$signed(s2);
 		end
 		AND: //AND or ANDI
 		begin
-			result = s1&s2;
+			result = $signed(s1)&$signed(s2);
 		end	
 		OR: //OR or ORI
 		begin
-			result = s1|s2;
+			result = $signed(s1)|$signed(s2);
 		end
 		XOR: //XOR or XORI
 		begin
-			result = s1^s2;
+			result = $signed(s1)^$signed(s2);
 		end
 		SLT: //SLT or SLTI
 		begin
@@ -152,7 +169,7 @@ begin
 		end
 		MUL: //MUL
 		begin
-			result = s1 * s2;
+			result = $signed(s1) * $signed(s2);
 		end
 		LUI: //LUI
 		begin
@@ -163,8 +180,35 @@ begin
 		begin
 			AUIPCim[31:12] = s2[19:0];
 			AUIPCim[11:0] = 12'd0;
-			result = s1 + AUIPCim;
+			result = $signed(s1) + AUIPCim;
 		end
+		BEQ: //BEQ 
+		begin
+			result = s1==s2;
+		end
+		BNE: //BNE
+		begin
+			result = s1!=s2;
+		end
+		BLT: //BLT
+		begin
+			result = ($signed(s1) < $signed(s2));
+		end
+		BGE: //BGE
+		begin
+			result = ($signed(s1) >= $signed(s2));
+		end
+		BLTU: //BLTU
+		begin
+			result = s1<s2;
+		end
+		BGEU: //BGEU
+		begin
+			//result = s1>=s2;
+			result = s1>s2;
+		end
+		default:
+			result = 32'd0;
 	endcase
 end
 	

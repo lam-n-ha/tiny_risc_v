@@ -52,11 +52,12 @@ module tb;
 	reg rst;
 	reg start;
 	wire done;
-	wire [2:0]S;
-	wire [2:0]NS;
+	wire [3:0]S;
+	wire [3:0]NS;
 	wire [4:0]rr1;
 	wire [4:0]rr2;
-	wire [4:0]rw;
+	wire [4:0]wr;
+	wire we;
 	wire [31:0]rd1;
 	wire [31:0]rd2;
 	wire [31:0]wd;
@@ -64,10 +65,14 @@ module tb;
 	wire [7:0]alu_control;
 	wire [31:0]result;
 	wire [6:0]opcode;
+	wire [7:0]mem_lo;
+	wire [31:0]mem_in;
+	wire mem_en;
+	wire [7:0]PC;
 	
 	
-	tiny_risc_v DUT(
-										clk,
+	
+	tiny_risc_v DUT(				clk,
 										rst,
 										start,
 										done,
@@ -75,14 +80,19 @@ module tb;
 										NS,
 										rr1,
 										rr2,
-										rw,
+										wr,
+										we,
 										rd1,
 										rd2,
 										wd,
 										r1, r2,
 										alu_control,
 										result,
-										opcode
+										opcode,
+										mem_lo,
+										mem_in,
+										mem_en,
+										PC
 										);
 	
 	initial

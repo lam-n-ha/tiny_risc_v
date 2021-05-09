@@ -24,7 +24,7 @@ module instruction_parser(
 			de = instruction[11:7];
 		end
 		// OP-IMM : SLLI, SRLI, SRAI
-		if(opcode == 7'b0010011 & (funct3 == 3'b001 | funct3 == 3'b101)) begin
+		else if(opcode == 7'b0010011 & (funct3 == 3'b001 | funct3 == 3'b101)) begin
 			i7 = instruction[31:25];
 			i5 = instruction[24:20];
 			s1 = instruction[19:15];
@@ -37,7 +37,7 @@ module instruction_parser(
 			de = instruction[11:7];
 		end
 		//  Branch or sw
-		if(opcode == 7'b1100011 || opcode == 7'b0100011) begin
+		else if(opcode == 7'b1100011 || opcode == 7'b0100011) begin
 			i7 = instruction[31:25];
 			s2 = instruction[24:20];
 			s1 = instruction[19:15];
