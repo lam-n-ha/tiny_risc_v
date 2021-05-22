@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(4): object "start" differs only in case from object "START" in the same scope File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 4
-Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(5): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/haln/Desktop/ECE289/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 5
+Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(4): object "start" differs only in case from object "START" in the same scope File: C:/Users/nlam1/Desktop/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 4
+Info (10281): Verilog HDL Declaration information at tiny_risc_v.v(5): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/nlam1/Desktop/tiny_risc_v/tiny_risc_v/tiny_risc_v.v Line: 5

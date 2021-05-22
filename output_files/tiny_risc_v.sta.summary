@@ -2,184 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'alu_control[0]~reg0'
-Slack : -11.245
-TNS   : -330.077
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -9.523
-TNS   : -6699.154
-
-Type  : Slow 1200mV 85C Model Setup 'S[1]~reg0'
-Slack : -5.820
-TNS   : -14.640
+Slack : -11.270
+TNS   : -6342.976
 
 Type  : Slow 1200mV 85C Model Setup 'instruction[0]'
-Slack : -5.588
-TNS   : -131.005
-
-Type  : Slow 1200mV 85C Model Setup 'aluc[0]'
-Slack : -4.890
-TNS   : -243.693
+Slack : -7.050
+TNS   : -130.740
 
 Type  : Slow 1200mV 85C Model Hold 'instruction[0]'
-Slack : -1.493
-TNS   : -2.262
-
-Type  : Slow 1200mV 85C Model Hold 'alu_control[0]~reg0'
-Slack : -0.424
-TNS   : -0.935
+Slack : -0.465
+TNS   : -2.452
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.088
-TNS   : -0.528
-
-Type  : Slow 1200mV 85C Model Hold 'S[1]~reg0'
-Slack : 1.162
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'aluc[0]'
-Slack : 1.215
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1757.949
+TNS   : -1699.198
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'instruction[0]'
-Slack : -1.383
-TNS   : -63.796
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'alu_control[0]~reg0'
-Slack : 0.340
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'aluc[0]'
-Slack : 0.394
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'S[1]~reg0'
-Slack : 0.421
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'alu_control[0]~reg0'
-Slack : -10.275
-TNS   : -307.566
+Slack : -1.286
+TNS   : -96.353
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -8.528
-TNS   : -6071.458
-
-Type  : Slow 1200mV 0C Model Setup 'S[1]~reg0'
-Slack : -5.276
-TNS   : -13.223
+Slack : -10.133
+TNS   : -5713.309
 
 Type  : Slow 1200mV 0C Model Setup 'instruction[0]'
-Slack : -5.165
-TNS   : -122.434
-
-Type  : Slow 1200mV 0C Model Setup 'aluc[0]'
-Slack : -4.480
-TNS   : -223.602
+Slack : -6.610
+TNS   : -122.079
 
 Type  : Slow 1200mV 0C Model Hold 'instruction[0]'
-Slack : -1.281
-TNS   : -1.629
-
-Type  : Slow 1200mV 0C Model Hold 'alu_control[0]~reg0'
-Slack : -0.366
-TNS   : -0.765
+Slack : -0.320
+TNS   : -1.229
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.032
-TNS   : -0.192
-
-Type  : Slow 1200mV 0C Model Hold 'S[1]~reg0'
-Slack : 0.945
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'aluc[0]'
-Slack : 1.219
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1757.559
+TNS   : -1698.864
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'instruction[0]'
-Slack : -1.324
-TNS   : -51.921
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'alu_control[0]~reg0'
-Slack : 0.382
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'S[1]~reg0'
-Slack : 0.390
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'aluc[0]'
-Slack : 0.460
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'alu_control[0]~reg0'
-Slack : -5.168
-TNS   : -153.853
+Slack : -1.227
+TNS   : -78.853
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -4.363
-TNS   : -2874.993
+Slack : -5.060
+TNS   : -2615.692
 
 Type  : Fast 1200mV 0C Model Setup 'instruction[0]'
-Slack : -2.548
-TNS   : -44.303
-
-Type  : Fast 1200mV 0C Model Setup 'S[1]~reg0'
-Slack : -2.521
-TNS   : -6.464
-
-Type  : Fast 1200mV 0C Model Setup 'aluc[0]'
-Slack : -2.104
-TNS   : -101.183
+Slack : -3.676
+TNS   : -51.032
 
 Type  : Fast 1200mV 0C Model Hold 'instruction[0]'
-Slack : -0.864
-TNS   : -3.285
-
-Type  : Fast 1200mV 0C Model Hold 'alu_control[0]~reg0'
-Slack : -0.514
-TNS   : -2.653
+Slack : -0.309
+TNS   : -4.504
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.281
-TNS   : -1.722
-
-Type  : Fast 1200mV 0C Model Hold 'S[1]~reg0'
-Slack : 0.540
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'aluc[0]'
-Slack : 0.689
+Slack : 0.132
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1395.433
+TNS   : -1358.110
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'instruction[0]'
-Slack : -0.506
-TNS   : -14.246
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'alu_control[0]~reg0'
-Slack : 0.159
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'S[1]~reg0'
-Slack : 0.230
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'aluc[0]'
-Slack : 0.336
-TNS   : 0.000
+Slack : -0.529
+TNS   : -20.470
 
 ------------------------------------------------------------

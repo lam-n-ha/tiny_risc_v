@@ -48,19 +48,18 @@ reg [31:0]s2;
 
 always @(*)
 begin
-		s1 = $signed(r1);
-		s2 = $signed(r2);
-		SRFILL = 16'd0;
-		SRL_1 = 32'd0;
-		SRL_2 = 32'd0;
-		SRL_4 = 32'd0;
-		SRL_8 = 32'd0;
-		
-		SLL_1 = 32'd0;
-		SLL_2 = 32'd0;
-		SLL_4 = 32'd0;
-		SLL_8 = 32'd0;
-		
+	s1 = $signed(r1);
+	s2 = $signed(r2);
+	SRFILL = 16'd0;
+	SRL_1 = 32'd0;
+	SRL_2 = 32'd0;
+	SRL_4 = 32'd0;
+	SRL_8 = 32'd0;
+	SLL_1 = 32'd0;
+	SLL_2 = 32'd0;
+	SLL_4 = 32'd0;
+	SLL_8 = 32'd0;
+	AUIPCim = 32'd0;
 	case (alu_control)
 		ADD: //ADD or ADDI or JAL or JR or JALR
 		begin

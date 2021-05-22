@@ -1,4 +1,0 @@
-
-State Machine - |tiny_risc_v|memwait
-Name 
-memwait.00 

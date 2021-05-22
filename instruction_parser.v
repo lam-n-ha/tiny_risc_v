@@ -22,6 +22,10 @@ module instruction_parser(
 			s2 = instruction[24:20];
 			s1 = instruction[19:15];
 			de = instruction[11:7];
+			i5 = 5'd0;
+			i7 = 7'd0;
+			i12 = 12'd0;
+			address = 20'd0;
 		end
 		// OP-IMM : SLLI, SRLI, SRAI
 		else if(opcode == 7'b0010011 & (funct3 == 3'b001 | funct3 == 3'b101)) begin
@@ -29,12 +33,21 @@ module instruction_parser(
 			i5 = instruction[24:20];
 			s1 = instruction[19:15];
 			de = instruction[11:7];
+			s2 = 5'd0;
+			funct7 = 7'd0;
+			i12 = 12'd0;
+			address = 20'd0;
 		end
 		// Rest of OP-IMM and JALR or lw
 		else if (opcode == 7'b0010011 | opcode == 7'b1100111 || opcode == 7'b0000011) begin 
 			i12 = instruction[31:20];
 			s1 = instruction[19:15];
 			de = instruction[11:7];
+			s2 = 5'd0;
+			i5 = 5'd0;
+			funct7 = 7'd0;
+			i7 = 7'd0;
+			address = 20'd0;
 		end
 		//  Branch or sw
 		else if(opcode == 7'b1100011 || opcode == 7'b0100011) begin
@@ -42,11 +55,32 @@ module instruction_parser(
 			s2 = instruction[24:20];
 			s1 = instruction[19:15];
 			i5 = instruction[11:7];
+			de = 5'd0;
+			funct7 = 7'd0;
+			i12 = 12'd0;
+			address = 20'd0;
 		end
 		// LUI or AUIPC or JAL
-		if((opcode == 7'b0110111)|(opcode == 7'b0010111)|(opcode == 7'b1101111)) begin
+		else if((opcode == 7'b0110111)|(opcode == 7'b0010111)|(opcode == 7'b1101111)) begin
 			address = instruction[31:12];
 			de = instruction[11:7];
+			s2 = 5'd0;
+			s1 = 5'd0;
+			i5 = 5'd0;
+			funct7 = 7'd0;
+			i7 = 7'd0;
+			i12 = 12'd0;
+		end
+		else
+		begin
+			address = 20'd0;
+			de = 5'd0;
+			s2 = 5'd0;
+			s1 = 5'd0;
+			i5 = 5'd0;
+			funct7 = 7'd0;
+			i7 = 7'd0;
+			i12 = 12'd0;
 		end
 	end	
 endmodule
